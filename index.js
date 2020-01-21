@@ -56,6 +56,7 @@ app.post('/upload',function(req, res) {
       })
     })
     input.pipe(parser).pipe(transform)
+    fs.unlinkSync('./upload/data.csv')
     return res.status(200).send(req.file)
   })
 })
